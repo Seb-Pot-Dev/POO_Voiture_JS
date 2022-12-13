@@ -6,4 +6,5 @@ class ElectricCar extends Car {
     show_autonomy(){
         console.log("Autonomy for "+this._brand+" "+this._model+" is "+this._autonomy+" kms.")
     }
+    
 }

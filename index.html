@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <button type="button" onclick="myCar.showModel()">Show model</button> <!-- création d'un bouton qui lance la fonction au clique-->
+    <p id="showmodel"></p> <!-- création d'une balise de paragraphe vide, mais avec id="showmodel", le paragraphe est rempli par la fonction showModel (voir Car.js)-->
+    <button type="button" onclick="myCar.start()">Start car</button>
+    <p id="start"></p> 
+    <button type "button" onclick="myCar.accelerate(20)">Accelerate</button>
+    <p id="speed"></p>
+    <button type "button" onclick="myCar.slow(20)">Slow</button>
+    <p id="slow"></p>
+    <button type "button" onclick="myCar.stop()">Stop</button>
+    <p id="stop"></p>
+
+
     <script src="Car.js"></script>
-    <script src ="ElectricCar.js"></script>
+    <script src="ElectricCar.js"></script>
     <script>
-    const myCar = new Car ("Citroen", "C4", "5")
-    const myElecCar = new ElectricCar ("Tesla", "Model S", "5","1000")
-    myCar.showModel()
-    myCar.get_all_infos()
-    myElecCar.show_autonomy()
+      const myCar = new Car("Citroen", "C4", "5");
+      const myElecCar = new ElectricCar("Tesla", "Model S", "5", "1000");
+
+    //   myCar.get_all_infos();
+    //   myElecCar.show_autonomy();
+    //   myCar.start();
+    //   myCar.start();
+    //   myCar.accelerate(50);
+    //   myCar.accelerate(40);
+    //   myCar.slow(25);
+    //   myCar.get_statut();
+    //   myCar.stop();
+    //   myCar.start();
+    //   myCar.get_statut();
     </script>
-</body>
+  </body>
 </html>

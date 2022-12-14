@@ -6,11 +6,21 @@ class Car {
     this._statut = false;
     this._actualspeed = 0;
   }
+  // SHOW
+  showModel() {
+    document.getElementById("showmodel").innerHTML =
+      "<img src='https://storage.googleapis.com/benzin/lead/original/img_5f7ef21c99eca.jpg'>";
+  
+    console.log("Model is : " + this._model + ".");
+  }
   // START
   start() {
     if (this._statut == false) {
       this._statut = true;
-      document.getElementById("start").innerHTML = this + " is starting...";
+      document.getElementById("state").innerHTML =
+        '<i size=1000px class="fa-solid fa-play"></i><b> ' +
+        this._actualspeed +
+        " km/h";
       console.log(this + " is starting...");
     } else {
       alert(this + " is already started !");
@@ -21,8 +31,10 @@ class Car {
   accelerate(speed) {
     if (this._statut == true) {
       this._actualspeed += speed;
-      document.getElementById("speed").innerHTML =
-        this + " is accelerating to " + this._actualspeed;
+      document.getElementById("state").innerHTML =
+        '<i class="fa-solid fa-gauge-simple-high"></i><b> ' +
+        this._actualspeed +
+        " km/h";
       console.log(
         this +
           " accelerate of " +
@@ -40,8 +52,10 @@ class Car {
   slow(speed) {
     if (this._actualspeed > 0) {
       this._actualspeed -= speed;
-      document.getElementById("slow").innerHTML =
-        this + " is slowing down to " + this._actualspeed;
+      document.getElementById("state").innerHTML =
+        '<i class="fa-solid fa-gauge-simple"></i><b> ' +
+        this._actualspeed +
+        " km/h";
       console.log(
         this +
           " is slowing down of " +
@@ -63,12 +77,18 @@ class Car {
   }
   // STOP
   stop() {
-    if (this._statut == true) {
+    if (this._statut == true && this._actualspeed==0) {
       this._statut = false;
       this._actualspeed = 0;
-      document.getElementById("stop").innerHTML = this + " does stop !";
+      document.getElementById("state").innerHTML =
+        '<i class="fa-solid fa-stop"></i><b> ' + this._actualspeed + " kmh/h";
       console.log(this + " is now turned off.");
-    } else {
+    } 
+    else if(this._statut == true && this._actualspeed>0){
+      alert(this + " is moving. Please slow down to 0 km/h before stoping.");
+      console.log(this + "is moving. Please slow down to 0 km/h before stoping.");
+    }
+    else {
       alert(this + " is already stopped.");
       console.log(this + " is already stopped.");
     }
@@ -97,13 +117,6 @@ class Car {
     return this._actualspeed;
   }
 
-  // SHOW
-  showModel() {
-    document.getElementById("showmodel").innerHTML = //Avec getElementById on cherche un élément dans l'html qui possède un id précis, puis on place dans son code html (innerHTML) les éléments suivants le =
-      "Model is : " + this._model + ".";
-
-    console.log("Model is : " + this._model + ".");
-  }
 
   //TO STRING
   toString() {

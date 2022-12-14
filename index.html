@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <button type="button" onclick="myCar.showModel()">Show model</button> <!-- création d'un bouton qui lance la fonction au clique-->
-    <p id="showmodel"></p> <!-- création d'une balise de paragraphe vide, mais avec id="showmodel", le paragraphe est rempli par la fonction showModel (voir Car.js)-->
-    <button type="button" onclick="myCar.start()">Start car</button>
-    <p id="start"></p> 
-    <button type "button" onclick="myCar.accelerate(20)">Accelerate</button>
-    <p id="speed"></p>
-    <button type "button" onclick="myCar.slow(20)">Slow</button>
-    <p id="slow"></p>
-    <button type "button" onclick="myCar.stop()">Stop</button>
-    <p id="stop"></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a45e9c27c8.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="Car.js"></script>
+  <script src="ElectricCar.js"></script>
 
 
-    <script src="Car.js"></script>
-    <script src="ElectricCar.js"></script>
-    <script>
-      const myCar = new Car("Citroen", "C4", "5");
-      const myElecCar = new ElectricCar("Tesla", "Model S", "5", "1000");
+  <!-- création d'un bouton qui lance la fonction au clique-->
+  <button type="button" onclick="myCar.showModel()">Show model</button>
+  <button type="button" onclick="myCar.start()">Start car</button>
+  <button type="button" onclick="myCar.accelerate(20)">Accelerate</button>
+  <button type="button" onclick="myCar.slow(20)">Slow</button>
+  <button type="button" onclick="myCar.stop()">Stop</button>
+
+  <p id="state"></p>
+
+  <!-- création d'une balise de paragraphe vide, mais avec id="showmodel", le paragraphe est rempli par la fonction showModel (voir Car.js)-->
+  <p id="showmodel"></p>
+
+
+  <script>
+    const myCar = new Car("Citroen", "C4", "5");
+    const myElecCar = new ElectricCar("Tesla", "Model S", "5", "1000");
 
     //   myCar.get_all_infos();
     //   myElecCar.show_autonomy();
@@ -36,6 +43,7 @@
     //   myCar.stop();
     //   myCar.start();
     //   myCar.get_statut();
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
